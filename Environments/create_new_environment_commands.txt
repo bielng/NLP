@@ -1,0 +1,49 @@
+# NLP Environment Setup
+
+Command line code to execute in the Terminal (Mac) or Anaconda Prompt (PC)
+
+
+## 1. nlp_basics environment
+
+#### view, create and switch environments
+conda env list
+conda create --name nlp_basics
+conda env list
+conda activate nlp_basics
+
+#### install and view packages
+conda install python jupyter notebook pandas matplotlib scikit-learn spacy
+conda list
+
+#### additional spacy download
+python -m spacy download en_core_web_sm
+
+
+## 2. nlp_machine_learning environment
+
+#### view, create and switch environments
+conda env list
+conda create --name nlp_machine_learning
+conda env list
+conda activate nlp_machine_learning
+
+#### install and view packages
+conda install python jupyter notebook pandas matplotlib scikit-learn spacy openpyxl numpy
+conda install -c conda-forge vaderSentiment
+conda list
+
+#### additional spacy download
+python -m spacy download en_core_web_sm
+
+
+## 3. nlp_transformers environment
+
+#### view, create and switch environments
+conda env list
+conda create --name nlp_transformers
+conda env list
+conda activate nlp_transformers
+
+#### install and view packages
+conda install python jupyter notebook pandas numpy scikit-learn openpyxl transformers pytorch
+conda list
