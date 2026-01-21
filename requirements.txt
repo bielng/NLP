@@ -1,0 +1,11 @@
+numpy
+pandas
+scipy
+tqdm
+joblib
+python-dotenv
+nltk
+spacy
+gensim
+textblob
+regex
