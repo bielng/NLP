@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.19.4"
+__generated_with = "0.19.6"
 app = marimo.App()
 
 
@@ -176,12 +176,10 @@ def _():
     return (nlp,)
 
 
-app._unparsable_cell(
-    r"""
-    pip install spacy
-    """,
-    name="_"
-)
+@app.cell
+def _():
+    # pip install spacy
+    return
 
 
 @app.cell
