@@ -193,7 +193,7 @@ def _():
 def _(nlp, phrase):
     doc = nlp(phrase)
     doc
-    return
+    return (doc,)
 
 
 @app.cell
@@ -203,7 +203,10 @@ def _():
 
 
 @app.cell
-def _():
+def _(doc):
+    # break up the text into tokens
+
+    [token.text for token in doc]
     return
 
 
