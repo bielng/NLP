@@ -46,6 +46,12 @@ def _(mo):
 
 
 @app.cell
+def _(pd):
+    df2 = pd.read_csv(r"C:\Users\TAJ\Desktop\NLP\Data\childrens_books.csv")
+    return (df2,)
+
+
+@app.cell
 def _(df):
     df.head(5)
     return
@@ -115,22 +121,29 @@ def _(df):
 
 
 @app.cell
-def _():
+def _(df2):
+    df2['Description']
     return
 
 
 @app.cell
-def _():
+def _(df2):
+    df2['Description'] = lower_replace(df2['Description'])
+    df2['Description']
     return
 
 
 @app.cell
-def _():
+def _(df2):
+    df2['Description'] = df2['Description'].str.replace('\xa0', ' ')
+    df2['Description'].iloc[0]
     return
 
 
 @app.cell
-def _():
+def _(df2):
+    df2['Description'] = df2['Description'].str.lower()
+    df2['Description'].iloc[0]
     return
 
 
