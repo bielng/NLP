@@ -155,11 +155,15 @@ def _(df):
 
 @app.cell
 def _():
-    return
+    import marimo as mo
+    return (mo,)
 
 
 @app.cell
-def _():
+def _(mo):
+    mo.md(r"""
+    ## Text Preprocessing with spaCy
+    """)
     return
 
 
@@ -211,7 +215,76 @@ def _(doc):
 
 
 @app.cell
-def _():
+def _(doc):
+    # Lemmatization
+
+    [token.lemma_ for token in doc]
+    return
+
+
+@app.cell
+def _(doc):
+    # Stop Words
+
+    norm = [token.lemma_ for token in doc if not token.is_stop]
+    norm
+    return
+
+
+@app.cell
+def _(doc):
+    # PARTS OF SPEECH TAGGING
+
+    pos = [(token.text, token.pos_) for token in doc]
+    pos
+    return
+
+
+@app.cell
+def _(df):
+    df
+    return
+
+
+@app.cell
+def _(df):
+    phrase_02 = df.sentence_clean[0]
+    phrase_02
+    return (phrase_02,)
+
+
+@app.cell
+def _(nlp, phrase_02):
+    doc_02 = nlp(phrase_02)
+    doc_02
+    return (doc_02,)
+
+
+@app.cell
+def _(doc_02):
+    # tokenize
+    [token.text for token in doc_02]
+    return
+
+
+@app.cell
+def _(doc_02):
+    # lemmatize
+    [token.lemma_ for token in doc_02]
+    return
+
+
+@app.cell
+def _(nlp):
+    # stop words
+    list(nlp.Defaults.stop_words)[:10]
+    return
+
+
+@app.cell
+def _(phrase_02):
+    # stop words
+    [token.lemma_ for token in phrase_02 if not token.is_stop]
     return
 
 
@@ -302,47 +375,8 @@ def _():
 
 @app.cell
 def _():
-    return
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell
-def _():
-    return
-
-
-@app.cell
-def _():
-    return
+    import marimo as mo
+    return (mo,)
 
 
 if __name__ == "__main__":
