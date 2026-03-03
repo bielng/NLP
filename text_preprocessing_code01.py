@@ -36,6 +36,10 @@ def _(pd):
     pd.set_option('display.max_colwidth', None)
     return
 
+@app.cell
+with pd.option_context('display.max_colwidth', None):
+    print(df)
+
 
 @app.cell
 def _(data, pd):
