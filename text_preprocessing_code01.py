@@ -112,6 +112,7 @@ def _(df):
 def _(df):
     # remove punctuation
     df['sentence_clean'] = df['sentence_clean'].str.replace(r'[^\w\s]', '', regex=True)
+    #df['sentence_clean'] = df['sentence_clean'].str.replace(r'[^a-zA-Z0-9\s]', '', regex=True)
     df
     return
 
